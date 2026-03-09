@@ -1,31 +1,23 @@
 async function loadPosts() {
-  const rssUrl = 'https://chrispugh.substack.com/feed';
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
   const container = document.getElementById('posts');
 
   try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+    const response = await fetch('/posts.json');
+    if (!response.ok) throw new Error('No posts file');
+    const posts = await response.json();
 
-    if (data.status !== 'ok') throw new Error('Feed error');
-
-    container.innerHTML = data.items.map(item => {
-      const date = new Date(item.pubDate).toLocaleDateString('en-US', {
+    container.innerHTML = posts.map(post => {
+      const date = new Date(post.pubDate).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       });
 
-      const tmp = document.createElement('div');
-      tmp.innerHTML = item.description;
-      const text = tmp.textContent.trim();
-      const excerpt = text.length > 160 ? text.slice(0, 160).trimEnd() + '\u2026' : text;
-
       return `
         <div class="post">
-          <div class="post-title"><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></div>
+          <div class="post-title"><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a></div>
           <div class="post-date">${date}</div>
-          ${excerpt ? `<div class="post-excerpt">${excerpt}</div>` : ''}
+          ${post.excerpt ? `<div class="post-excerpt">${post.excerpt}</div>` : ''}
         </div>
       `;
     }).join('');
