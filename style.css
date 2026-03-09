@@ -119,6 +119,29 @@ main {
   line-height: 1.6;
 }
 
+footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 24px 0 48px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #999;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 #posts-error {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 14px;
