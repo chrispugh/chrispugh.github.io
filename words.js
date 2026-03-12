@@ -6,21 +6,14 @@ async function loadPosts() {
     if (!response.ok) throw new Error('No posts file');
     const posts = await response.json();
 
-    container.innerHTML = posts.map(post => {
-      const date = new Date(post.pubDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-
-      return `
-        <div class="post">
-          <div class="post-title"><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a></div>
-          <div class="post-date">${date}</div>
-          ${post.excerpt ? `<div class="post-excerpt">${post.excerpt}</div>` : ''}
+    container.innerHTML = posts.map(post => `
+      <a class="post-thumb" href="${post.link}" target="_blank" rel="noopener noreferrer">
+        <div class="post-thumb-img">
+          ${post.image ? `<img src="${post.image}" alt="">` : ''}
         </div>
-      `;
-    }).join('');
+        <div class="post-thumb-title">${post.title}</div>
+      </a>
+    `).join('');
   } catch {
     container.innerHTML = '<p id="posts-error">Posts unavailable right now.</p>';
   }

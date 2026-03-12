@@ -39,11 +39,21 @@ jobs:
               clean = re.sub(r'<[^>]+>', '', description).strip()
               excerpt = clean[:160].rstrip() + '\u2026' if len(clean) > 160 else clean
 
+              # Extract cover image from media:content or description HTML
+              ns = {'media': 'http://search.yahoo.com/mrss/'}
+              media = item.find('media:content', ns)
+              if media is not None and media.get('url'):
+                  image = media.get('url')
+              else:
+                  img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', description)
+                  image = img_match.group(1) if img_match else ''
+
               posts.append({
                   'title': title,
                   'link': link,
                   'pubDate': pub_date,
-                  'excerpt': excerpt
+                  'excerpt': excerpt,
+                  'image': image
               })
 
           with open('posts.json', 'w') as f:
