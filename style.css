@@ -125,6 +125,22 @@ main {
   color: #6a8cab;
 }
 
+.posts-more {
+  grid-column: 1 / -1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.posts-more a {
+  color: #6a8cab;
+  text-decoration: none;
+}
+
+.posts-more a:hover {
+  color: #c25348;
+}
+
 footer {
   padding: 0 0 48px;
 }
