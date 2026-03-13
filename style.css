@@ -73,6 +73,16 @@ main {
   text-decoration: none;
 }
 
+.subscribe {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe iframe {
+  max-width: 100%;
+}
+
 #words {
   margin-top: 72px;
   padding-top: 48px;
