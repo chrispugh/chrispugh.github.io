@@ -1,52 +1,59 @@
 [
   {
+    "title": "The math that matters",
+    "link": "https://www.chrispugh.me/p/the-math-that-matters",
+    "pubDate": "Thu, 12 Mar 2026 16:32:29 GMT",
+    "excerpt": "N&#186; 039",
+    "image": "/post-images/The math that matters.jpeg"
+  },
+  {
     "title": "Starting a personal curriculum",
     "link": "https://www.chrispugh.me/p/starting-a-personal-curriculum",
     "pubDate": "Thu, 05 Mar 2026 16:38:43 GMT",
     "excerpt": "N&#186; 038",
-    "image": ""
+    "image": "/post-images/Starting a personal curriculum.jpeg"
   },
   {
     "title": "Go to bed like you matter",
     "link": "https://www.chrispugh.me/p/go-to-bed-like-you-matter",
     "pubDate": "Mon, 02 Mar 2026 17:20:50 GMT",
     "excerpt": "N&#186; 037",
-    "image": ""
+    "image": "/post-images/Go to bed like you matter.jpeg"
   },
   {
     "title": "Double Nickel",
     "link": "https://www.chrispugh.me/p/double-nickel",
     "pubDate": "Wed, 25 Feb 2026 16:02:39 GMT",
     "excerpt": "N&#186; 036",
-    "image": ""
+    "image": "/post-images/Double Nickel.jpg"
   },
   {
     "title": "Friendship on read receipts",
     "link": "https://www.chrispugh.me/p/friendship-on-read-receipts",
     "pubDate": "Sat, 21 Feb 2026 20:12:49 GMT",
     "excerpt": "N&#186; 035",
-    "image": ""
+    "image": "/post-images/Friendship on read receipts.jpg"
   },
   {
     "title": "From notes to work",
     "link": "https://www.chrispugh.me/p/from-notes-to-work",
     "pubDate": "Tue, 10 Feb 2026 03:12:49 GMT",
     "excerpt": "N&#186; 034",
-    "image": ""
+    "image": "/post-images/From notes to work.jpg"
   },
   {
     "title": "Holding things twice",
     "link": "https://www.chrispugh.me/p/holding-things-twice",
     "pubDate": "Wed, 04 Feb 2026 16:02:19 GMT",
     "excerpt": "N&#186; 033",
-    "image": ""
+    "image": "/post-images/Holding things twice.jpeg"
   },
   {
     "title": "I'm not lazy, I'm scared.",
     "link": "https://www.chrispugh.me/p/im-not-lazy-im-scared",
     "pubDate": "Sun, 01 Feb 2026 20:03:49 GMT",
     "excerpt": "N&#186; 032",
-    "image": ""
+    "image": "/post-images/I'm not lazy, I'm scared.jpeg"
   },
   {
     "title": "He's not dead, yet.",
@@ -130,13 +137,6 @@
     "link": "https://www.chrispugh.me/p/the-last-days-of-summer",
     "pubDate": "Sun, 17 Aug 2025 20:10:00 GMT",
     "excerpt": "N&#186; 020",
-    "image": ""
-  },
-  {
-    "title": "Startled neutral face",
-    "link": "https://www.chrispugh.me/p/startled-neutral-face",
-    "pubDate": "Wed, 09 Jul 2025 02:21:41 GMT",
-    "excerpt": "N&#186; 019",
     "image": ""
   }
 ]
