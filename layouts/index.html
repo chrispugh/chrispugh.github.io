@@ -1,0 +1,26 @@
+{{ define "main" }}
+<main class="homepage">
+  <header class="site-header">
+    {{ if (fileExists "static/images/CP_wordmark.png") }}
+      <img src="/images/CP_wordmark.png" alt="Chris Pugh" class="wordmark">
+    {{ else }}
+      <h1 class="wordmark-text">Chris Pugh</h1>
+    {{ end }}
+  </header>
+
+  <section class="bio">
+    <p>I'm Chris Pugh, a journalist, photographer, and essayist based in Ukiah, California.</p>
+    <p>I write <a href="{{ .Site.Params.substackURL }}">Incremental Outcome</a>, a personal essay newsletter on Substack, about creative practice, attention, and the experience of living a full life in a rural place.</p>
+    <p>My photography focuses on vernacular architecture and the overlooked edges of small towns in Northern California.</p>
+    <p>I co-founded <a href="https://www.mediumartcenter.com">MEDIUM Art Center</a> in 2021, a community space in downtown Ukiah that believes in the transformative power of making and experiencing art.</p>
+    <p>I have worked in community journalism in Mendocino County for more than a decade.</p>
+  </section>
+
+  <section class="subscribe">
+    <form class="subscribe-form" action="https://chrispugh.substack.com/api/v1/free" method="POST">
+      <input type="email" name="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+</main>
+{{ end }}

@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="writing-page">
+  <header class="page-header">
+    <h1 class="page-title">Writing</h1>
+  </header>
+
+  <div class="essay-grid">
+    {{ range (where .Pages "Kind" "page").ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="essay-card">
+      {{ with .Params.image }}
+      <div class="essay-image">
+        <img src="/images/writing/{{ . }}" alt="{{ $.Title }}">
+      </div>
+      {{ else }}
+      <div class="essay-image essay-image-placeholder"></div>
+      {{ end }}
+      <div class="essay-info">
+        <h2 class="essay-title">{{ .Title }}</h2>
+        <time class="essay-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

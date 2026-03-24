@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main class="essay-page">
+  <article class="essay">
+    <header class="essay-header">
+      <h1 class="essay-page-title">{{ .Title }}</h1>
+      <time class="essay-page-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    </header>
+
+    <div class="essay-body">
+      {{ .Content }}
+    </div>
+
+    <footer class="essay-footer">
+      <a href="/writing/" class="back-link">Back to Writing</a>
+    </footer>
+  </article>
+</main>
+{{ end }}

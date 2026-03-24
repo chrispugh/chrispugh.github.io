@@ -1,0 +1,15 @@
+baseURL = "https://chrispugh.com/"
+languageCode = "en-us"
+title = "Chris Pugh"
+
+[params]
+  description = "Journalist, photographer, and essayist based in Ukiah, California."
+  substackURL = "https://chrispugh.substack.com"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[pagination]
+  pagerSize = 50

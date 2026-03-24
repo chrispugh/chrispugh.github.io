@@ -1,0 +1,438 @@
+/* =============================================
+   Chris Pugh — Newsprint-inspired personal site
+   ============================================= */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fafafa;
+  --text: #222222;
+  --accent-1: #6a8cab;
+  --accent-2: #c25348;
+  --rule: #d0d0d0;
+  --muted: #777777;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --condensed: 'Oswald', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  line-height: 1.45;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--text);
+  text-decoration-color: var(--accent-1);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  text-decoration-color: var(--accent-2);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Homepage --- */
+.homepage {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  flex: 1;
+}
+
+.site-header {
+  margin-bottom: 1.5rem;
+}
+
+.wordmark {
+  max-width: 280px;
+  height: auto;
+}
+
+.wordmark-text {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* --- Bio --- */
+.bio {
+  margin-bottom: 2.5rem;
+}
+
+.bio p {
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+.bio a {
+  text-decoration-thickness: 1px;
+}
+
+/* --- Subscribe Form --- */
+.subscribe {
+  margin-bottom: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  padding: 0.6rem 0;
+  border: none;
+  border-bottom: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+  color: var(--muted);
+}
+
+.subscribe-form input[type="email"]:focus {
+  border-bottom-color: var(--accent-1);
+}
+
+.subscribe-form button {
+  font-family: var(--condensed);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--text);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0;
+}
+
+.footer-nav {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo {
+  max-height: 24px;
+  width: auto;
+}
+
+.footer-logo-text {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--condensed);
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-1);
+}
+
+.footer-link-disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+/* --- Writing Page --- */
+.writing-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  flex: 1;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.essay-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.essay-card {
+  text-decoration: none;
+  display: block;
+}
+
+.essay-card:hover .essay-title {
+  color: var(--accent-1);
+}
+
+.essay-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+  background-color: #e8e8e8;
+}
+
+.essay-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.3s ease;
+}
+
+.essay-card:hover .essay-image img {
+  filter: grayscale(0%) contrast(1);
+}
+
+.essay-image-placeholder {
+  background-color: #e0ddd8;
+  position: relative;
+}
+
+.essay-image-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.03) 3px,
+    rgba(0,0,0,0.03) 4px
+  );
+}
+
+.essay-info {
+  padding: 0.2rem 0;
+}
+
+.essay-title {
+  font-family: var(--condensed);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.essay-date {
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* --- Individual Essay --- */
+.essay-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  flex: 1;
+}
+
+.essay-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.essay-page-title {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  text-transform: none;
+}
+
+.essay-page-date {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.essay-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.essay-body p {
+  margin-bottom: 1.1rem;
+}
+
+.essay-body p:last-child {
+  margin-bottom: 0;
+}
+
+.essay-body blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--accent-2);
+  font-style: italic;
+  color: #444;
+}
+
+.essay-body h2,
+.essay-body h3 {
+  font-family: var(--condensed);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.essay-body h2 {
+  font-size: 1.4rem;
+}
+
+.essay-body h3 {
+  font-size: 1.15rem;
+}
+
+.essay-body img {
+  margin: 1.5rem 0;
+}
+
+.essay-body a {
+  text-decoration-color: var(--accent-1);
+  text-decoration-thickness: 1px;
+}
+
+.essay-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.back-link {
+  font-family: var(--condensed);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--accent-1);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .essay-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .writing-page {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+
+  .homepage {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .essay-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form button {
+    align-self: flex-start;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .essay-page-title {
+    font-size: 1.8rem;
+  }
+}

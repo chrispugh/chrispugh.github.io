@@ -1,4 +1,7 @@
+/public/
+/resources/_gen/
+/.hugo_build.lock
 .DS_Store
-.claude/
-chrispugh_avatar.jpg
-chrispugh_bio.md
+preview-*.html
+preview-*.css
+preview.html
