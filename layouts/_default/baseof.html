@@ -11,23 +11,21 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  {{ block "main" . }}{{ end }}
-
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <div class="footer-wordmark">
-        {{ if (fileExists "static/images/CP_wordmark.png") }}
-          <a href="/"><img src="/images/CP_wordmark.png" alt="Chris Pugh" class="footer-logo"></a>
-        {{ else }}
-          <a href="/" class="footer-logo-text">CP</a>
-        {{ end }}
-      </div>
-      <div class="footer-links">
+  <header class="site-header">
+    <div class="header-inner">
+      {{ if (fileExists "static/images/CP_wordmark.png") }}
+        <a href="/"><img src="/images/CP_wordmark.png" alt="Chris Pugh" class="wordmark"></a>
+      {{ else }}
+        <a href="/" class="wordmark-text">Chris Pugh</a>
+      {{ end }}
+      <nav class="site-nav">
         <a href="/">About</a>
         <a href="/writing/">Writing</a>
-        <span class="footer-link-disabled">Photography</span>
-      </div>
-    </nav>
-  </footer>
+        <span class="nav-link-disabled">Photography</span>
+      </nav>
+    </div>
+  </header>
+
+  {{ block "main" . }}{{ end }}
 </body>
 </html>

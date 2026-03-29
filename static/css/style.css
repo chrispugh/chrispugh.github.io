@@ -52,21 +52,21 @@ img {
   height: auto;
 }
 
-/* --- Homepage --- */
-.homepage {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 3rem;
-  flex: 1;
+/* --- Site Header --- */
+.site-header {
+  padding: 2.5rem 1.5rem 0;
 }
 
-.site-header {
-  margin-bottom: 1.5rem;
+.header-inner {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .wordmark {
   max-width: 280px;
   height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
 }
 
 .wordmark-text {
@@ -76,6 +76,44 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--condensed);
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--accent-1);
+}
+
+.nav-link-disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+/* --- Homepage --- */
+.homepage {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+  flex: 1;
+  width: 100%;
 }
 
 /* --- Bio --- */
@@ -97,118 +135,13 @@ img {
   text-decoration-thickness: 1px;
 }
 
-/* --- Subscribe Form --- */
-.subscribe {
-  margin-bottom: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
-}
-
-.subscribe-form {
-  display: flex;
-  gap: 0.75rem;
-  align-items: stretch;
-}
-
-.subscribe-form input[type="email"] {
-  flex: 1;
-  font-family: var(--serif);
-  font-size: 0.9rem;
-  padding: 0.6rem 0;
-  border: none;
-  border-bottom: 1px solid var(--text);
-  background: transparent;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.subscribe-form input[type="email"]::placeholder {
-  color: var(--muted);
-}
-
-.subscribe-form input[type="email"]:focus {
-  border-bottom-color: var(--accent-1);
-}
-
-.subscribe-form button {
-  font-family: var(--condensed);
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--text);
-  border-radius: 0;
-  background: transparent;
-  color: var(--text);
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.subscribe-form button:hover {
-  background-color: var(--text);
-  color: var(--bg);
-}
-
-/* --- Footer --- */
-.site-footer {
-  border-top: 1px solid var(--rule);
-  padding: 1.5rem 0;
-}
-
-.footer-nav {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footer-logo {
-  max-height: 24px;
-  width: auto;
-}
-
-.footer-logo-text {
-  font-family: var(--condensed);
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  font-family: var(--condensed);
-  font-size: 0.85rem;
-  font-weight: 400;
-  text-transform: lowercase;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: var(--text);
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--accent-1);
-}
-
-.footer-link-disabled {
-  color: var(--muted);
-  cursor: default;
-}
-
 /* --- Writing Page --- */
 .writing-page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem 3rem;
   flex: 1;
+  width: 100%;
 }
 
 .page-header {
@@ -300,8 +233,9 @@ img {
 .essay-page {
   max-width: 640px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem 3rem;
   flex: 1;
+  width: 100%;
 }
 
 .essay-header {
@@ -400,7 +334,7 @@ img {
   }
 
   .writing-page {
-    padding: 2rem 1.25rem;
+    padding: 1.5rem 1.25rem 2rem;
   }
 }
 
@@ -410,26 +344,16 @@ img {
   }
 
   .homepage {
-    padding: 3rem 1.25rem 2rem;
+    padding: 1.25rem 1.25rem 2rem;
+  }
+
+  .header-inner {
+    max-width: 100%;
   }
 
   .essay-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-
-  .subscribe-form {
-    flex-direction: column;
-  }
-
-  .subscribe-form button {
-    align-self: flex-start;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
   }
 
   .essay-page-title {
